@@ -1,0 +1,126 @@
+@layer theme, base, antd, components, utilities;
+@import 'tailwindcss';
+
+body {
+  background-color: white;
+}
+
+:root {
+  --primary-color: #ffc84e;
+  --error-color: #ef4444;
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+
+.ant-layout {
+  background-color: white;
+  height: 100%;
+}
+
+.ant-menu-item {
+  margin-top: 0px !important;
+}
+
+.ant-menu-horizontal {
+  border: none !important;
+}
+
+.ant-layout-sider {
+  background-color: white !important;
+}
+
+.ant-menu {
+  border: none !important;
+}
+
+.ant-card {
+  margin-bottom: 20px;
+}
+
+.ant-avatar {
+  
+}
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateX(10px) translateY(0);
+  }
+  50% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(10px) translateY(0);
+  }
+}
+.bg-banner {
+  background-image: url('/src/assets/banner-new.png');
+}
+
+@keyframes rotateClockwise {
+  0% {
+    transform: translate(90px, 40px) rotate(0deg);
+  }
+  100% {
+    transform: translate(90px, 40px) rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  0% {
+    transform: translate(90px, 40px) rotate(0deg);
+  }
+  100% {
+    transform: translate(90px, 40px) rotate(-360deg);
+  }
+}
+
+@keyframes boxingMove {
+  0% {
+    transform: translateX(100px) rotate(0) translateY(0);
+  }
+  25% {
+    transform: translateX(100px) rotate(-5deg) translateY(-5px);
+  }
+  50% {
+    transform: translateX(100px) rotate(5deg) translateY(5px);
+  }
+  75% {
+    transform: translateX(100px) rotate(-5deg) translateY(-5px);
+  }
+  100% {
+    transform: translateX(100px) rotate(0) translateY(0);
+  }
+}
+
+.animate-rotateClockwise {
+  animation: rotateClockwise 5s linear infinite;
+}
+
+.animate-rotateCounterClockwise {
+  animation: rotateCounterClockwise 5s linear infinite;
+}
+
+.animate-boxingMove:hover {
+  animation: boxingMove 0.4s ease-in-out infinite;
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+}
